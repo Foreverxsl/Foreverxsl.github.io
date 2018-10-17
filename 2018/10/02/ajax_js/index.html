@@ -108,16 +108,18 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="js">
-<meta property="og:url" content="http://yoursite.com/2018/09/06/js/index.html">
+  <meta name="description" content="原生 创建一个异步调用对象，XMLHttpRequest 创建一个新的HTTP请求，并且指定方法，url及参数等（XMLHttpRequest.open(‘GET/POST’,url,true)） 设置用于响应HTTP状态变化的函数（XMLHttpRequest.onreadystatuschange=function） 发送HTTP请求（XMLHttpRequest.send()） 获取异步调用">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原生ajax和jquery框架ajax的使用">
+<meta property="og:url" content="http://yoursite.com/2018/10/02/ajax_js/index.html">
 <meta property="og:site_name" content="Cjh_Blog">
+<meta property="og:description" content="原生 创建一个异步调用对象，XMLHttpRequest 创建一个新的HTTP请求，并且指定方法，url及参数等（XMLHttpRequest.open(‘GET/POST’,url,true)） 设置用于响应HTTP状态变化的函数（XMLHttpRequest.onreadystatuschange=function） 发送HTTP请求（XMLHttpRequest.send()） 获取异步调用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/09/06/js/user.jpg">
-<meta property="og:updated_time" content="2018-09-06T09:24:33.049Z">
+<meta property="og:updated_time" content="2018-10-17T09:14:41.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/06/js/user.jpg">
+<meta name="twitter:title" content="原生ajax和jquery框架ajax的使用">
+<meta name="twitter:description" content="原生 创建一个异步调用对象，XMLHttpRequest 创建一个新的HTTP请求，并且指定方法，url及参数等（XMLHttpRequest.open(‘GET/POST’,url,true)） 设置用于响应HTTP状态变化的函数（XMLHttpRequest.onreadystatuschange=function） 发送HTTP请求（XMLHttpRequest.send()） 获取异步调用">
 
 
 
@@ -126,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/06/js/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/02/ajax_js/"/>
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>js | Cjh_Blog</title>
+  <title>原生ajax和jquery框架ajax的使用 | Cjh_Blog</title>
   
 
 
@@ -306,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/js/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/ajax_js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cjh">
@@ -323,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js
+          <h1 class="post-title" itemprop="name headline">原生ajax和jquery框架ajax的使用
               
             
           </h1>
@@ -348,16 +350,46 @@
                 
               
 
-              <time title="创建时间：2018-09-06 17:19:53 / 修改时间：17:24:33" itemprop="dateCreated datePublished" datetime="2018-09-06T17:19:53+08:00">2018-09-06</time>
+              <time title="创建时间：2018-10-02 16:49:42" itemprop="dateCreated datePublished" datetime="2018-10-02T16:49:42+08:00">2018-10-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-17 17:14:41" itemprop="dateModified" datetime="2018-10-17T17:14:41+08:00">2018-10-17</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/front/" itemprop="url" rel="index"><span itemprop="name">front</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -386,7 +418,16 @@
       
 
       
-        <p><img src="/2018/09/06/js/user.jpg" alt="Hello"></p>
+        <h1 id="原生"><a href="#原生" class="headerlink" title="原生"></a>原生</h1><ol>
+<li>创建一个异步调用对象，XMLHttpRequest</li>
+<li>创建一个新的HTTP请求，并且指定方法，url及参数等（XMLHttpRequest.open(‘GET/POST’,url,true)）</li>
+<li>设置用于响应HTTP状态变化的函数（XMLHttpRequest.onreadystatuschange=function）</li>
+<li>发送HTTP请求（XMLHttpRequest.send()）</li>
+<li>获取异步调用数据<a id="more"></a>
+GET:<br>//步骤一:创建异步对象<br>var ajax = new XMLHttpRequest();<br>//步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端<br>ajax.open(‘get’,’getStar.php?starName=’+name);<br>//步骤三:发送请求<br>ajax.send();<br>//步骤四:注册事件 onreadystatechange 状态改变就会调用<br>ajax.onreadystatechange = function () {<br>if (ajax.readyState==4 &amp;&amp;ajax.status==200) {<br> //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的<br>　　　　console.log(ajax.responseText);//输入相应的内容<br>　　}<br>}<br>post请求:<br>//创建异步对象<br>var xhr = new XMLHttpRequest();<br>//设置请求的类型及url<br>//post请求一定要添加请求头才行不然会报错<br>xhr.setRequestHeader(“Content-type”,”application/x-www-form-urlencoded”);<br>xhr.open(‘post’, ‘02.post.php’ );<br>//发送请求<br>xhr.send(‘name=fox&amp;age=18’);<br>xhr.onreadystatechange = function () {<br> // 这步为判断服务器是否正确响应<br>if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) {<br> console.log(xhr.responseText);<br>}<br>};</li>
+</ol>
+<h1 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h1><p>ajax({<br>  url: myUrl,<br>  type: ‘get’,<br>  dataType: ‘json’,<br>  timeout: 1000,<br>  success: function (data, status) {<br>    console.log(data)<br>  },<br>  fail: function (err, status) {<br>    console.log(err)<br>  }<br>})<br>不使用contentType: “application/json”则data可以是对象<br>$.ajax({<br>url: actionurl,<br>type: “POST”,<br>datType: “JSON”,<br>data: { id: nodeId },<br>async: false,<br>success: function () {}<br>});<br>使用contentType: “application/json”则data只能是json字符串<br>$.ajax({<br>url: actionurl,<br>type: “POST”,<br>datType: “JSON”,<br>contentType: “application/json”<br>data: “{‘id’: “ + nodeId +”}”,<br>async: false,<br>success: function () {}<br>});</p>
+<p>JSON.parse()<br>JSON 通常用于与服务端交换数据。<br>在接收服务器数据时一般是字符串。<br>我们可以使用 JSON.parse() 方法将数据转换为json对象。<br>JSON.stringify()<br>JSON 通常用于与服务端交换数据。<br>在向服务器发送数据时一般是字符串。<br>我们可以使用 JSON.stringify() 方法将json对象转换为字符串。</p>
 
       
     </div>
@@ -405,6 +446,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i>js</a>
+          
+        </div>
+      
 
       
       
@@ -414,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/06/css/" rel="next" title="CSS实现垂直居中的几种方法">
-                <i class="fa fa-chevron-left"></i> CSS实现垂直居中的几种方法
+              <a href="/2018/09/30/mvvm_vue/" rel="next" title="什么是MVVM和vue的优点">
+                <i class="fa fa-chevron-left"></i> 什么是MVVM和vue的优点
               </a>
             
           </div>
@@ -423,6 +470,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/11/js/bug_css/" rel="prev" title="常见浏览器兼容性问题与解决方案">
+                常见浏览器兼容性问题与解决方案 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -470,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -490,7 +550,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -524,7 +584,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -572,6 +636,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原生"><span class="nav-number">1.</span> <span class="nav-text">原生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jquery"><span class="nav-number">2.</span> <span class="nav-text">Jquery</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -617,7 +697,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">|&nbsp;&nbsp;博客全站共237字</span>
+  <span class="post-count">|&nbsp;&nbsp;博客全站共2.5k字</span>
 </div>
 
 
@@ -738,7 +818,7 @@
   
     <script type="text/javascript">
       window.livereOptions = {
-        refer: '2018/09/06/js/'
+        refer: '2018/10/02/ajax_js/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
