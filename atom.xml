@@ -116,28 +116,6 @@
   </entry>
   
   <entry>
-    <title>对盒模型的理解</title>
-    <link href="http://yoursite.com/2018/09/25/box_css/"/>
-    <id>http://yoursite.com/2018/09/25/box_css/</id>
-    <published>2018-09-25T08:49:42.000Z</published>
-    <updated>2018-10-17T09:26:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>盒子模型有两种，W3C盒子模型和IE盒子模型。W3C定义的盒子模型包括margin、border、padding、content ，元素的width=content的宽度<br>IE盒子模型与W3C的盒子模型唯一区别就是元素的宽度，元素的width=content+padding+border<br><a id="more"></a></p><p>W3C定义盒子模型与IE定义的盒子模型，IE定义的比较合理，元素的宽度应该包含border（边框）和padding（填充），这个和我们现实生活的盒子是一样的，W3C也认识到自己的问题了，所以在CSS3中新增了一个样式box-sizing，包含两个属性content-box 和 border-box。<br>border-box  元素的width=content+padding+border<br>.test1{<br>    box-sizing:border-box;<br>    width:200px;<br>    padding:10px;<br>    border:15px solid #eee;<br>}  </p><p>content-box   元素的width=content（用样式指定的宽度）<br>.test1{<br>    box-sizing:content-box;<br>    width:200px;<br>    padding:10px;<br>    border:15px solid #eee;<br>}  </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;盒子模型有两种，W3C盒子模型和IE盒子模型。W3C定义的盒子模型包括margin、border、padding、content ，元素的width=content的宽度&lt;br&gt;IE盒子模型与W3C的盒子模型唯一区别就是元素的宽度，元素的width=content+padding+border&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="front" scheme="http://yoursite.com/categories/front/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vue生命周期的理解</title>
     <link href="http://yoursite.com/2018/09/06/life_vue/"/>
     <id>http://yoursite.com/2018/09/06/life_vue/</id>
