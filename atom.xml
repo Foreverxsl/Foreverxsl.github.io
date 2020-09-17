@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Cjh_Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-10-17T09:28:10.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>cjh</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常见ES6属性归档</title>
+    <link href="http://yoursite.com/2018/10/12/es6_js/"/>
+    <id>http://yoursite.com/2018/10/12/es6_js/</id>
+    <published>2018-10-12T08:49:42.000Z</published>
+    <updated>2018-10-17T09:28:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>箭头函数<br>可以让this指向固定化，这种特性很有利于封装回调函数<br>函数的this指向：<br>箭头函数的this永远指向其上下文的 this，任何方法都改变不了其指向，如call(), bind(), apply()<br>普通函数的this指向调用它的那个对象</li><li>Promise<br>Promise是异步编程的一种解决方案，比传统的解决方案——回调函数和事件监听——更合理和更强大。<br>所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。<br>Promise对象有以下两个特点:<br>1) 对象的状态不受外界影响，Promise对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和Rejected（已失败）<br>2) 一旦状态改变，就不会再变，任何时候都可以得到这个结果。<a id="more"></a></li><li>var、let、const<br>var、let、const的区别<br>var定义的变量，没有块级作用域的概念，可以跨块访问, 不能跨函数访问，声明的变量存在变量提升。<br>let定义的变量，只能在块作用域里访问，不能跨块访问，也不能跨函数访问，变量不存在变量提升。<br>const用来定义常量，使用时必须初始化(即必须赋值)，只能在块作用域里访问，而且不能修改，变量不存在变量提升。<br>变量提升现象：<br>浏览器在运行代码之前会进行预解析，首先解析函数声明，定义变量，解析完之后再对函数、变量进行运行、赋值等。<br>-不论var声明的变量处于当前作用域的第几行，都会提升到作用域的头部。<br>-var 声明的变量会被提升到作用域的顶部并初始化为undefined，而let声明的变量在作用域的顶部未被初始化。<br>函数提升在变量提升之前</li><li>ES6中继承<br>Class 可以通过extends关键字实现继承<br>class Parent { }<br>class Child1 extends Parent {<br>constructor(x, y, colors) {<br>super(x, y); // 调用父类的constructor(x, y)<br>this.colors = colors; }<br>toString() { return this.colors + ‘ ‘ + super.toString(); // 调用父类的toString() } }</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;箭头函数&lt;br&gt;可以让this指向固定化，这种特性很有利于封装回调函数&lt;br&gt;函数的this指向：&lt;br&gt;箭头函数的this永远指向其上下文的 this，任何方法都改变不了其指向，如call(), bind(), apply()&lt;br&gt;普通函数的this指向调用它的那个对象&lt;/li&gt;
+&lt;li&gt;Promise&lt;br&gt;Promise是异步编程的一种解决方案，比传统的解决方案——回调函数和事件监听——更合理和更强大。&lt;br&gt;所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。&lt;br&gt;Promise对象有以下两个特点:&lt;br&gt;1) 对象的状态不受外界影响，Promise对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和Rejected（已失败）&lt;br&gt;2) 一旦状态改变，就不会再变，任何时候都可以得到这个结果。&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="front" scheme="http://yoursite.com/categories/front/"/>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见浏览器兼容性问题与解决方案</title>
+    <link href="http://yoursite.com/2018/10/11/js/bug_css/"/>
+    <id>http://yoursite.com/2018/10/11/js/bug_css/</id>
+    <published>2018-10-11T08:01:42.000Z</published>
+    <updated>2018-10-17T09:17:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>不同浏览器的标签默认的margin和padding不同：<br>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>可以使用Normalize来清除默认样式，也可以使用如下代码：<br>body,h1,h2,h3,ul,li,input,div,span,a,form …… { margin:0; padding:0; }</li><li>浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大：<br>问题症状:常见症状是IE6中后面的一块被顶到下一行<br>解决方案：在float的标签样式控制中加入 display:inline;将其转化为行内属性 </li><li>图片默认有间距<br>问题症状：几个img标签放在一起的时候，有些浏览器会有默认的间距，通配符清除间距也不起作用。<br>解决方案：使用float属性为img布局</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;不同浏览器的标签默认的margin和padding不同：&lt;br&gt;问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。&lt;br&gt;可以使用Normalize来清除默认样式，也可以使用如下代码：&lt;br&gt;body,h1,h2,h3
+      
+    
+    </summary>
+    
+      <category term="front" scheme="http://yoursite.com/categories/front/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原生ajax和jquery框架ajax的使用</title>
+    <link href="http://yoursite.com/2018/10/02/ajax_js/"/>
+    <id>http://yoursite.com/2018/10/02/ajax_js/</id>
+    <published>2018-10-02T08:49:42.000Z</published>
+    <updated>2018-10-17T09:14:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="原生"><a href="#原生" class="headerlink" title="原生"></a>原生</h1><ol><li>创建一个异步调用对象，XMLHttpRequest</li><li>创建一个新的HTTP请求，并且指定方法，url及参数等（XMLHttpRequest.open(‘GET/POST’,url,true)）</li><li>设置用于响应HTTP状态变化的函数（XMLHttpRequest.onreadystatuschange=function）</li><li>发送HTTP请求（XMLHttpRequest.send()）</li><li>获取异步调用数据<a id="more"></a>GET:<br>//步骤一:创建异步对象<br>var ajax = new XMLHttpRequest();<br>//步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端<br>ajax.open(‘get’,’getStar.php?starName=’+name);<br>//步骤三:发送请求<br>ajax.send();<br>//步骤四:注册事件 onreadystatechange 状态改变就会调用<br>ajax.onreadystatechange = function () {<br>if (ajax.readyState==4 &amp;&amp;ajax.status==200) {<br> //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的<br>　　　　console.log(ajax.responseText);//输入相应的内容<br>　　}<br>}<br>post请求:<br>//创建异步对象<br>var xhr = new XMLHttpRequest();<br>//设置请求的类型及url<br>//post请求一定要添加请求头才行不然会报错<br>xhr.setRequestHeader(“Content-type”,”application/x-www-form-urlencoded”);<br>xhr.open(‘post’, ‘02.post.php’ );<br>//发送请求<br>xhr.send(‘name=fox&amp;age=18’);<br>xhr.onreadystatechange = function () {<br> // 这步为判断服务器是否正确响应<br>if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) {<br> console.log(xhr.responseText);<br>}<br>};</li></ol><h1 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h1><p>ajax({<br>  url: myUrl,<br>  type: ‘get’,<br>  dataType: ‘json’,<br>  timeout: 1000,<br>  success: function (data, status) {<br>    console.log(data)<br>  },<br>  fail: function (err, status) {<br>    console.log(err)<br>  }<br>})<br>不使用contentType: “application/json”则data可以是对象<br>$.ajax({<br>url: actionurl,<br>type: “POST”,<br>datType: “JSON”,<br>data: { id: nodeId },<br>async: false,<br>success: function () {}<br>});<br>使用contentType: “application/json”则data只能是json字符串<br>$.ajax({<br>url: actionurl,<br>type: “POST”,<br>datType: “JSON”,<br>contentType: “application/json”<br>data: “{‘id’: “ + nodeId +”}”,<br>async: false,<br>success: function () {}<br>});</p><p>JSON.parse()<br>JSON 通常用于与服务端交换数据。<br>在接收服务器数据时一般是字符串。<br>我们可以使用 JSON.parse() 方法将数据转换为json对象。<br>JSON.stringify()<br>JSON 通常用于与服务端交换数据。<br>在向服务器发送数据时一般是字符串。<br>我们可以使用 JSON.stringify() 方法将json对象转换为字符串。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;原生&quot;&gt;&lt;a href=&quot;#原生&quot; class=&quot;headerlink&quot; title=&quot;原生&quot;&gt;&lt;/a&gt;原生&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;创建一个异步调用对象，XMLHttpRequest&lt;/li&gt;
+&lt;li&gt;创建一个新的HTTP请求，并且指定方法，url及参数等（XMLHttpRequest.open(‘GET/POST’,url,true)）&lt;/li&gt;
+&lt;li&gt;设置用于响应HTTP状态变化的函数（XMLHttpRequest.onreadystatuschange=function）&lt;/li&gt;
+&lt;li&gt;发送HTTP请求（XMLHttpRequest.send()）&lt;/li&gt;
+&lt;li&gt;获取异步调用数据&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="front" scheme="http://yoursite.com/categories/front/"/>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么是MVVM和vue的优点</title>
+    <link href="http://yoursite.com/2018/09/30/mvvm_vue/"/>
+    <id>http://yoursite.com/2018/09/30/mvvm_vue/</id>
+    <published>2018-09-30T06:22:25.000Z</published>
+    <updated>2018-10-17T09:26:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>vue是一个基于MVVM的js框架。MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。<br>MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。<br><a id="more"></a><br>mvvm和mvc区别？它和其它框架（jquery）的区别是什么？哪些场景适合？<br>mvc和mvvm其实区别并不大。都是一种设计思想。主要就是mvc中Controller演变成mvvm中的viewModel。mvvm主要解决了mvc中大量的DOM 操作使页面渲染性能降低，加载速度变慢，影响用户体验。<br>区别：vue数据驱动，通过数据来显示视图层而不是节点操作。<br>场景：数据操作比较多的场景，更加便捷</p><p>vue的优点:</p><ol><li>低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li><li>可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</li><li>独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计。<br>可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vue是一个基于MVVM的js框架。MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。&lt;br&gt;MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="front" scheme="http://yoursite.com/categories/front/"/>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue生命周期的理解</title>
+    <link href="http://yoursite.com/2018/09/06/life_vue/"/>
+    <id>http://yoursite.com/2018/09/06/life_vue/</id>
+    <published>2018-09-06T09:19:53.000Z</published>
+    <updated>2018-10-17T09:26:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Vue 实例从创建到销毁的过程，就是生命周期。也就是从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，我们称这是 Vue 的生命周期。总共分为8个阶段创建前/后，载入前/后，更新前/后，销毁前/后。<br><a id="more"></a></p><p>创建前/后： 在beforeCreated阶段，vue实例的挂载元素$el和数据对象data都为undefined，还未初始化。在created阶段，vue实例的数据对象data有了，$el还没有。<br>载入前/后：在beforeMount阶段，vue实例的$el和data都初始化了，但还是挂载之前为虚拟的dom节点，data.message还未替换。在mounted阶段，vue实例挂载完成，data.message成功渲染。<br>更新前/后：当data变化时，会触发beforeUpdate和updated方法。<br>销毁前/后：beforeDestroy钩子函数在实例销毁之前调用。在这一步，实例仍然完全可用。<br>destroyed钩子函数在Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。<br>一般可以在created函数中调用ajax获取页面初始化所需的数据。<br>computed：计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Vue 实例从创建到销毁的过程，就是生命周期。也就是从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，我们称这是 Vue 的生命周期。总共分为8个阶段创建前/后，载入前/后，更新前/后，销毁前/后。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="front" scheme="http://yoursite.com/categories/front/"/>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS实现垂直居中的几种方法</title>
+    <link href="http://yoursite.com/2018/09/06/center_css/"/>
+    <id>http://yoursite.com/2018/09/06/center_css/</id>
+    <published>2018-09-06T08:49:42.000Z</published>
+    <updated>2018-10-17T08:43:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>table-cell<br>html结构：<br><div class="box box1"><pre><code>&lt;span&gt;垂直居中&lt;/span&gt;</code></pre></div><br>css：<br>.box1{<br> display: table-cell;<br> vertical-align: middle;<br> text-align: center;<br>}<a id="more"></a></li><li>display:flex<br>.box2{<br> display: flex;<br> justify-content:center;<br> align-items:center;<br>}</li><li>绝对定位和负边距<br>.box3{position:relative;}<br>.box3 span{<pre><code>    position: absolute;    width:100px;    height: 50px;    top:50%;    left:50%;    margin-left:-50px;    margin-top:-25px;    text-align: center;}</code></pre></li><li>绝对定位和0<br>.box4 span{<br>width: 50%;<br>height: 50%;<br>background: #000;<br>overflow: auto;<br>margin: auto;<br>position: absolute;<br>top: 0; left: 0; bottom: 0; right: 0;<br>}</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;table-cell&lt;br&gt;html结构：&lt;br&gt;&lt;div class=&quot;box box1&quot;&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;span&amp;gt;垂直居中&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;css：&lt;br&gt;.box1{&lt;br&gt; display: table-cell;&lt;br&gt; vertical-align: middle;&lt;br&gt; text-align: center;&lt;br&gt;}&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="front" scheme="http://yoursite.com/categories/front/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>my-first-page</title>
+    <link href="http://yoursite.com/2018/09/06/my-first-page/"/>
+    <id>http://yoursite.com/2018/09/06/my-first-page/</id>
+    <published>2018-09-06T01:49:42.000Z</published>
+    <updated>2018-09-06T08:39:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客的好处有：</p><ol><li>全是静态文件，访问速度快；</li><li>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</li><li>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</li></ol><a id="more"></a><ol start="4"><li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；</li><li>博客内容可以轻松打包、转移、发布到其它平台；</li><li>等等；</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;使用github pages服务搭建博客的好处有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;全是静态文件，访问速度快；&lt;/li&gt;
+&lt;li&gt;免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；&lt;/li&gt;
+&lt;li&gt;可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="introduction" scheme="http://yoursite.com/categories/introduction/"/>
+    
+    
+      <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+  </entry>
+  
+</feed>
